@@ -1,0 +1,8 @@
+<h2>Sign Up</h2>
+<form name="SignUpForm" ng-submit="SignUpForm.$valid && signUpCtrl.signUp()" novalidate>
+  <input type="text" ng-model="signUpCtrl.patientEmail" placeholder="Email" required/>
+  <input type="password" ng-model="signUpCtrl.patientPassword" placeholder="Password" required />
+  <input type="password" ng-model="signUpCtrl.patientPasswordConfirmation" placeholder="Confirm Password" required />
+  <input type="submit" value="Sign Up" />
+</form>
+{{SignUpForm.$valid}}
