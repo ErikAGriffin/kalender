@@ -6,7 +6,7 @@ require 'database_cleaner'
 
 Capybara.app = Server
 
-# DB = Sequel.connect("postgres://localhost/dbname_test");
+# DB = Sequel.connect("postgres://localhost/kalender_test");
 
 RSpec.configure do |config|
 

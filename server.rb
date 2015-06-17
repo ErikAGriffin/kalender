@@ -11,7 +11,7 @@ class Server < Hobbit::Base
 
 
   get '/' do
-    render_static 'index.html'
+    render_static 'home.html'
   end
 
   # get '*' do

@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('', ['ui.router','ngAnimate']);
+  var app = angular.module('kalender', ['ui.router','ngAnimate']);
 
   app.config(function($stateProvider,$urlRouterProvider,$locationProvider) {
 

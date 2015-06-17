@@ -6,6 +6,7 @@ Sequel.migration do
       primary_key :id
       String :email
       String :password_hash
+      Integer :role
     end
   end
 
