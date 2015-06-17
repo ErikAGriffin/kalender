@@ -4,7 +4,7 @@ Sequel.migration do
   up do
     create_table(:users) do
       primary_key :id
-      String :email
+      String :email, size: 50
       String :password_hash
       Integer :role
     end
