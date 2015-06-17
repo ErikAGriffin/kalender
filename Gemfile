@@ -8,7 +8,7 @@ gem 'multi_json'
 gem 'bcrypt'
 gem 'pg'
 gem 'sequel'
-require 'jwt'
+gem 'jwt'
 group :test do
   gem 'shotgun'
   gem 'launchy'
