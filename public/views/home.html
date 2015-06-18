@@ -29,19 +29,24 @@
       sign up on their own, perhaps I should not tie
       the creation of both family member and patient
       creation together in a single POST.
+        - Need to flesh this out further, even for
+        this first iteration. This is next.
+        - After that UX is sorted, try to clean
+        up all the methods. See below.
 
-      While there may be a use case for preserving user accounts,
-      I do not see it. I think the design should be that removing
-      a family member will remove the family member entry and its
-      user entry at the same time.
+      The sign up process is currently messy. I do
+      not like that a helper file must handle the
+      dual creation.  Also there is no error handling
+      for if a user patient is created but the
+      patient patient fails.  I think I can achieve
+      this through Transactions.
 
-      Removing a patient will remove the patient entry, its user
-      entry, and all of the associated family member entries and their
-      user accounts.
+      I want the dual creation to occur from the model,
+      if at all possible.
+        - Need to test out the one_to_one methods.
 
-      Ahh but would you remove?  In the production product, we would
-      want to make it as easy as possible for Users who discontinue the
-      service to rejoin.
+      Then I need to unit test. So badly.
+
     </template>
 
 
