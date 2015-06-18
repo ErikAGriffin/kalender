@@ -18,7 +18,7 @@ class Server < Hobbit::Base
     new_user_pair = MultiJson.load(request.body, symbolize_keys: true)
     patient = new_user_pair[:patient]
     register_new_patient(patient)
-
+    'Worked!'
   end
 
   # get '*' do

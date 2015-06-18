@@ -18,7 +18,10 @@ module Hobbit
       p id
       p first_name
       p last_name
-      new_patient = Patient.new(id:id,first_name:first_name,last_name:last_name)
+      # To assign a primary_key (which is restricted), you must
+      # pass a block with a variable that is the new instance?
+      # and assign that field from that variable.
+      new_patient = Patient.new(first_name:first_name,last_name:last_name){|p| p.id = id}
       new_patient.valid? ? new_patient.save : false
     end
 
