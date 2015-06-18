@@ -5,4 +5,6 @@ class Patient < Sequel::Model
 
   one_to_many :family_members
 
+  one_to_one :user
+
 end

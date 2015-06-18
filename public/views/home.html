@@ -30,12 +30,6 @@
       the creation of both family member and patient
       creation together in a single POST.
 
-      Furthermore, I need to investigate if I can make
-      the patient and family member primary key a foreign
-      key to the users table.  Currently, when removing
-      a patient from the database I would have to manually
-      handle deletion of its user account.
-
       While there may be a use case for preserving user accounts,
       I do not see it. I think the design should be that removing
       a family member will remove the family member entry and its

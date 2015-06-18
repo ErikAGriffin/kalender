@@ -20,14 +20,13 @@ class User < Sequel::Model
     self.password_hash = @password
   end
 
+  # Question: How to change the value of what is :patient below, based
+  # on the role assigned to the user?  Or perhaps based on an input?
+  # The 'one_to_one' method was undefined within the after_save method.
+  one_to_one :patient
+
   def after_save
     super
-    puts 'Hello!'
-    if self.role == 0
-      puts 'Hmm I would need the params here if I were'
-      puts 'to create the patient entry in a hook.'
-    elsif self.role == 1
-    end
   end
 
 end
