@@ -14,10 +14,11 @@ class Server < Hobbit::Base
     render_static 'home.html'
   end
 
+  # Currently MUST sign up family member at same time,
+  # so they are tied to a single resource.
   post '/newpatient' do
     new_user_pair = MultiJson.load(request.body, symbolize_keys: true)
-    patient = new_user_pair[:patient]
-    register_new_patient(patient)
+    register_new_user_pair(new_user_pair)
     'Worked!'
   end
 
