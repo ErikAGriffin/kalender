@@ -5,6 +5,6 @@ class FamilyMember < Sequel::Model
 
   many_to_one :patient
 
-  # one_to_one :user
+  one_to_one :user
 
 end
