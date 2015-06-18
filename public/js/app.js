@@ -29,7 +29,7 @@
         confirmation: self.patientPasswordConfirmation
       };
 
-      var familyMember = {
+      var family = {
         firstName: self.familyFirstName,
         lastName: self.familyLastName,
         email: self.familyEmail,
@@ -38,8 +38,8 @@
       };
 
       console.log(patient);
-      console.log(familyMember);
-      $http.post('/newpatient',{patient:patient,familyMember:familyMember})
+      console.log(family);
+      $http.post('/newpatient',{patient:patient,family:family})
         .success(function(data,status) {
           console.log(status+': Success!');
           console.log(data);

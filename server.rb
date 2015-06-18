@@ -15,11 +15,9 @@ class Server < Hobbit::Base
   end
 
   post '/newpatient' do
-    new_user = MultiJson.load(request.body, symbolize_keys: true)
-    patient = new_user[:patient]
-    family = new_user[:familyMember]
-    p patient
-    p family
+    new_user_pair = MultiJson.load(request.body, symbolize_keys: true)
+    patient = new_user_pair[:patient]
+    register_new_patient(patient)
 
   end
 
