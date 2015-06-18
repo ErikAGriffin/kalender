@@ -24,6 +24,8 @@ class User < Sequel::Model
   # on the role assigned to the user?  Or perhaps based on an input?
   # The 'one_to_one' method was undefined within the after_save method.
   one_to_one :patient
+  # Suppose I could just put them both here, then override the method for
+  # each to only call super if its the correct role.
 
   def after_save
     super
