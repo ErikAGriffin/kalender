@@ -14,6 +14,15 @@ class Server < Hobbit::Base
     render_static 'home.html'
   end
 
+  post '/newpatient' do
+    new_user = MultiJson.load(request.body, symbolize_keys: true)
+    patient = new_user[:patient]
+    family = new_user[:familyMember]
+    p patient
+    p family
+
+  end
+
   # get '*' do
   #   render_static 'index.html'
   # end
