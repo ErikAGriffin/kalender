@@ -6,7 +6,7 @@ module Hobbit
     # I feel like some of these methods could somehow be implemented
     # into the class models.
 
-    def register_new_user_pair(user_pair)
+    def register_new_user_pair(new_user_pair)
       family = new_user_pair[:family]
       patient = register_new_patient(new_user_pair[:patient])
       if patient
@@ -24,17 +24,17 @@ module Hobbit
     def register_new_family_member(patient, family)
       new_user = create_user(family[:email].downcase,family[:password],1)
       if new_user
-        create_family_member(new_user.id,family[:firstName],family[:lastName],patient.user_id)
+        create_family_member(new_user.id,family[:firstName],family[:lastName],patient.id)
       end
     end
 
-    def create_family_member(user_id,first_name,last_name,patient_id)
-      new_family_member = FamilyMember.new(first_name:first_name,last_name:last_name,patient_id:patient_id){|f|f.user_id = user_id}
+    def create_family_member(id,first_name,last_name,patient_id)
+      new_family_member = FamilyMember.new(first_name:first_name,last_name:last_name,patient_id:patient_id){|f|f.id = id}
       new_family_member.valid? ? new_family_member.save : false
     end
 
-    def create_patient(user_id,first_name,last_name)
-      new_patient = Patient.new(first_name:first_name,last_name:last_name){|p| p.user_id = user_id}
+    def create_patient(id,first_name,last_name)
+      new_patient = Patient.new(first_name:first_name,last_name:last_name){|p| p.id = id}
       new_patient.valid? ? new_patient.save : false
     end
 
