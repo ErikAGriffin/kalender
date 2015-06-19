@@ -1,6 +1,6 @@
 require 'sequel'
 
-env = ENV['DB_ENV_VAR'] || 'development'
+env = ENV['KAL_DB_ENV'] || 'development'
 
 
 DB = Sequel.connect(ENV['DATABASE_URL'] || "postgres://localhost/kalender_#{env}")

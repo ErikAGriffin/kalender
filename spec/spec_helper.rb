@@ -1,8 +1,7 @@
-ENV['VORA_DB_ENV'] = 'test'
+ENV['KAL_DB_ENV'] = 'test'
 
 require './server'
 require 'capybara/rspec'
-require 'database_cleaner'
 
 Capybara.app = Server
 
