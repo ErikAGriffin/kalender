@@ -20,13 +20,11 @@ class User < Sequel::Model
     self.password_hash = @password
   end
 
-  # Question: How to change the value of what is :patient below, based
-  # on the role assigned to the user?  Or perhaps based on an input?
-  # The 'one_to_one' method was undefined within the after_save method.
+  # Obviously the user will only be tied to either a patient
+  # or a family member. If attempting to access the wrong
+  # type, 'nil' will simply be returned.
   one_to_one :patient, :key => :id
   one_to_one :family_member, :key => :id
-  # Suppose I could just put them both here, then override the method for
-  # each to only call super if its the correct role.
 
   def after_save
     super
